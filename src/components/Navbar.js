@@ -1,5 +1,5 @@
 // import { click } from "@testing-library/user-event/dist/click";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css';
 import { Button } from "./Button";
@@ -19,6 +19,11 @@ function Navbar() {
             setButton(true);
         }
     };
+
+
+    useEffect(() => {
+        showButton() 
+    }, []);
 
     window.addEventListener('resize' , showButton);
 
